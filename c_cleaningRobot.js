@@ -59,13 +59,15 @@ function makeDiagram(selector) {
                 .on('click', function () {
                     world.markFloorDirty(floorNumber);
                     diagram.floors[floorNumber].attr('class', 'dirty floor');
-                })
+                });
                 // adicionando wet floor
+                /*
                 .on('contextmenu', function() {
                     if (world.markFloorWet(floorNumber)) {
                         diagram.floors[floorNumber].attr('class', 'wet floor');
                     }
                 });
+                */
                 
                 
     }
@@ -139,7 +141,7 @@ function makeAgentControlledDiagram() {
 
         randomState();
     }
-
+    ///
     function randomState() {
         if (AUTO_RANDOM_STATE) {
             let max = 3, min = 0;
@@ -301,11 +303,11 @@ function update() {
 
  //////////random
 
-const Y_SPACE = 120;
+//const Y_SPACE = 120;
 var AUTO_RANDOM_STATE = true;
-var ALLOW_MANUAL_INPUT = false;
+//var ALLOW_MANUAL_INPUT = false;
 
-/* Control configurations */
+/* Control configurations 
 function switchAutoRandomState() {
     AUTO_RANDOM_STATE = !AUTO_RANDOM_STATE;
 }
@@ -313,13 +315,9 @@ function switchAutoRandomState() {
 function switchAllowManualInput() {
     ALLOW_MANUAL_INPUT = !ALLOW_MANUAL_INPUT;
 }
+*/
 
-
-
-
-
-
-
+/*
 $("body").keydown(function(e){
     let location;
     let nextLocation;
@@ -362,7 +360,7 @@ $("body").keydown(function(e){
             break;
     }
 });
-
+*/
 
 
 
