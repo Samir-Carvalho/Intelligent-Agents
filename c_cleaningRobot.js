@@ -25,9 +25,8 @@ function makeDiagram(selector) {
     diagram.world = world;
     //diagram.xPosition = (floorNumber) => 150 + floorNumber * 600 / diagram.world.floors.length;
     //adicionando diagrama com novas posições x e y
-    diagram.xPosition = (floorNumber) => (floorNumber % 2 != 0 ? 450 : 150);
-    diagram.yPosition = (floorNumber) => (floorNumber >= 2 ? 450 : 150);
-
+    diagram.xPosition = (floorNumber) => (floorNumber % 2 != 0 ? 400 : 150);
+    diagram.yPosition = (floorNumber) => (floorNumber >= 2 ? 350 : 150);
 
     diagram.root = d3.select(selector);
     diagram.robot = diagram.root.append('g')
@@ -46,16 +45,15 @@ function makeDiagram(selector) {
         .attr('y', -10)
         .attr('text-anchor', 'middle');
 
-    //adicionando new floors 
+    //adicionando novos pisos 
     diagram.floors = [];
     for (let floorNumber = 0; floorNumber < world.floors.length; floorNumber++) {
         diagram.floors[floorNumber] =
             diagram.root.append('rect')
                 .attr('class', 'clean floor') // for css
                 .attr('x', diagram.xPosition(floorNumber))
-                //.attr('y', 225)
                 //add nova posicao para y
-                .attr('y', diagram.yPosition(floorNumber) + 105)
+                .attr('y', diagram.yPosition(floorNumber) + 105)//para o quadrado verde
                 .attr('width', SIZE)
                 .attr('height', SIZE / 4)
                 .attr('stroke', 'black')
@@ -91,8 +89,6 @@ function renderWorld(diagram) {
     //diagram.robot.style('transform', `translate(${diagram.xPosition(diagram.world.location)}px,100px)`);
     // add
     diagram.robot.style('transform', `translate(${diagram.xPosition(diagram.world.location)}px,${diagram.yPosition(diagram.world.location)}px)`);
-    console.log(diagram.world.location);
-    console.log(diagram.world.floors);
 
 }
 

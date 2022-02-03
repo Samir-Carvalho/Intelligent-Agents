@@ -14,14 +14,13 @@ class World {
         this.floors[floorNumber].dirty = true;
     }
 
-    // modificando as ações para adicionar a limpesa
+    // modificando as ações para adicionar up e down
     simulate(action) {
         switch (action) {
             case 'SUCK':
                 this.floors[this.location].dirty = false;
                 this.lastClean = this.location;
                 break;
-
             //alterando a logica para adicionar mais location
             case 'LEFT':
                 if (this.location == 1) {
@@ -73,41 +72,16 @@ function reflexVacuumAgent(world) {
 function reflexVacuumAgent(world) {
     if (world.floors[world.location].dirty) { return 'SUCK' }
     else if (world.location == 0) {
-        if (this.lastLocation == 1) {
-            this.lastLocation = 0;
-            return 'DOWN'
-        } else {
-            this.lastLocation = 0;
-            return 'DOWN'
-        }
+        return 'DOWN'
     }
     else if (world.location == 1) {
-        if (this.lastLocation == 3) {
-            this.lastLocation = 1;
-            return 'LEFT'
-
-        } else {
-            this.lastLocation = 1;
-            return 'DOWN'
-        }
+        return 'LEFT'
     }
     else if (world.location == 2) {
-        if (this.lastLocation == 0) {
-            this.lastLocation = 2;
-            return 'RIGHT'
-        } else {
-            this.lastLocation = 2;
-            return 'UP'
-        }
+        return 'RIGHT'
     }
     else if (world.location == 3) {
-        if (this.lastLocation == 1) {
-            this.lastLocation = 3;
-            return 'LEFT'
-        }else {
-            this.lastLocation = 3;
-            return 'UP'
-        }
+        return 'UP'
     }
 }
 /*
