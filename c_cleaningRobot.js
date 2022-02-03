@@ -1,3 +1,10 @@
+/*
+Implementação do Random Vacuum Agent - 4 places - Javascript - Intelligent Agents
+    Trabalho Inteligencia Artificial
+    Samir Avelino Carvalho
+    Vitor de Paula Batista
+    Repositório: https://github.com/Samir-Carvalho/Intelligent-Agents 
+*/
 /* The general structure is to put the AI code in xyz.js and the visualization
    code in c_xyz.js. Create a diagram object that contains all the information
    needed to draw the diagram, including references to the environment&agents.

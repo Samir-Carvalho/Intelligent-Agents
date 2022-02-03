@@ -1,3 +1,10 @@
+/*
+Implementação do Random Vacuum Agent - 4 places - Javascript - Intelligent Agents
+    Trabalho Inteligencia Artificial
+    Samir Avelino Carvalho
+    Vitor de Paula Batista
+    Repositório: https://github.com/Samir-Carvalho/Intelligent-Agents 
+*/
 // In this simple problem the world includes both the environment and the robot
 // but in most problems the environment and world would be separate
 class World {
